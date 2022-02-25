@@ -3,15 +3,15 @@ import ReactDom from 'react-dom';
 
 // CSS
 
-import {data} from './books'
+import { data } from './books'
 import SpecificBook from './Book'
-import {greeting} from './testing/testing'
+import { greeting } from './testing/testing'
 
 function BookList() {
   console.log(greeting);
   return (
     <section className='booklist'>
-      {data.map((book, index) => {
+      {data.map(book => {
         return <SpecificBook key={book.id} {...book}></SpecificBook>;
       })}
     </section>
@@ -20,4 +20,4 @@ function BookList() {
 
 
 
-ReactDom.render(document.getElementById('root'));
+ReactDom.render(<BookList />, document.getElementById('root'));
